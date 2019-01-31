@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+    <master auto="start"/>
+
+    <!-- TF setting -->
+    <include file="$(find art_racecar)/launch/includes/art_car_tf.launch.xml" />
+
+    <!-- SENSOR DEVICE -->
+    <!-- second startup ls01g lidar -->
+    <include file="$(find art_racecar)/launch/ls01g_lidar.launch"/>
+    <!-- IMU -->
+    <include file="$(find art_imu)/launch/imu.launch" />
+    <!-- Car -->
+    <node pkg="art_driver" type="art_driver_node" name="art_driver_node"/>
+
+	
+      <!-- Rviz -->
+    <!--node pkg="rviz" type="rviz" name="rviz" args="-d $(find art_racecar)/launch/rviz/gmapping.rviz" if="$(arg use_rviz)"/-->
+
+</launch>
+

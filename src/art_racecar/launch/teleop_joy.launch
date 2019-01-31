@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node name="joy_node" pkg="joy" type="joy_node" />
+    <node name="racecar_joy" pkg="art_racecar" type="racecar_joy.py" output="screen" />
+        
+   
+    <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find art_racecar)/launch/rviz.rviz"/>-->
+</launch>

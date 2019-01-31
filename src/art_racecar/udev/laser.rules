@@ -1,0 +1,4 @@
+# set the udev rule , make the device_port be fixed by ls-lidar
+#
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001",MODE:="0666", SYMLINK+="laser"
+

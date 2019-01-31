@@ -1,0 +1,44 @@
+DWAPlannerROS: 
+
+  acc_lim_th: 0.1
+  acc_lim_x: 0.5
+  acc_lim_y: 0.0 
+
+
+  max_vel_x: 0.5
+  min_vel_x: 0.0 
+
+  max_vel_y: 0.0 
+  min_vel_y: 0.0
+
+  max_trans_vel: 0.5
+  min_trans_vel: 0.1
+  max_rot_vel: 0.2
+  min_rot_vel: 0.0
+
+  sim_time: 1.5
+
+  sim_granularity: 0.025
+
+  goal_distance_bias: 30.0
+  path_distance_bias: 20.0 
+  occdist_scale: 0.01
+  forward_point_distance: 0.5
+  stop_time_buffer: 0.2 
+#######
+  scaling_speed: 0.5
+#######
+  max_scaling_factor: 0.2 
+  oscillation_reset_dist: 0.05 
+   
+  #
+  vx_samples: 20
+  vy_samples: 0 
+  vtheta_samples: 10
+  
+  rot_stopped_vel: 0.01 
+  trans_stopped_vel: 0.01
+  #
+  xy_goal_tolerance: 0.2 
+  yaw_goal_tolerance: 0.1 
+  latch_xy_goal_tolerance: true #如果目标误差被锁定，若机器人达到目标XY位置，它将旋转到位，即使误差没有达到，也会做旋转 

@@ -1,0 +1,17 @@
+GlobalPlanner:
+    allow_unknown: false
+#    default_tolerance: 0.5      #路径规划器目标点的公差范围
+#   visualize_potential: true   #指定是否通过可视化PointCloud2计算的潜在区域
+#    use_dijkstra: true          #如果为ture，则使用dijkstra算法。 否则使用A *算法
+#    use_quadratic: true         #二次逼近
+#    use_grid_path: true         #如果为true，沿着栅格边界创建路径。 否则，使用梯度下降的方法。
+#    old_navfn_behavior: true    #如果你想要global_planner准确反映navfn的行为，此项设置为true。
+
+#    lethal_cost: 25
+#    neutral_cost: 50
+#    cost_factor: 3
+#    publish_potential: True
+
+
+NavfnROS:
+    allow_unknown: false

@@ -1,0 +1,6 @@
+<launch>
+	<param name="/talker/inverted" value="true"/>
+    <include file="$(find ls01a)/launch/talker.launch">
+    <!--<arg name="inverted" value="true"/>-->
+  </include>
+</launch>

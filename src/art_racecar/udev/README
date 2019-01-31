@@ -1,0 +1,3 @@
+#添加ART_Racecar的USB设备,使用如下指令:
+sudo bash art_init.sh
+然后重启电脑
