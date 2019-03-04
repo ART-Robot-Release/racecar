@@ -2,7 +2,7 @@
 # art-racecar V1.0
 
 ROS racecar
-************************安装************************
+************************安装************************  
 cd  ~/  
 git clone https://github.com/ART-Robot-Release/racecar  
 cd racecar  
@@ -11,7 +11,7 @@ cd racecar
 cd  ~/racecar/src/art_racecar/udev  
 sudo  bash art_init.sh  
 sudo reboot  
-**********************建立地图**********************
+**********************建立地图**********************  
 先安装电脑用户名和主机名配置主从机  
 a) 运行车  
 roslaunch art_racecar Run_car.launch  
@@ -35,7 +35,7 @@ f) 保存地图（地图直接保存在小车上）
 地图保存在art_racecar/map/mymap.pgm  
 检查无误后，修改mymap.pgm替换为test.pgm  
 
-************************导航************************
+************************导航************************  
 a) SSH连接小车（Ubuntu系统为例）sz为小车用户名  
 ssh sz@192.168.5.101  
 b) 运行车  
@@ -49,7 +49,7 @@ source art_racecar/art_rviz.sh
 roslaunch art_racecar rviz.launch  
 e) 4.5 开始导航   
 在RVIZ中设定初始坐标，设定目标位置，开始导航  
-*********************软件接口***********************
+*********************软件接口***********************  
 1.启动底盘  
 	启动底盘需要启动rosserial_python节点。  
 	设置参考art_racecar/launch/Run_car.launch  
