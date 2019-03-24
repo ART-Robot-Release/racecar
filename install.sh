@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # Varibles
-rosversion="kinetic"
+# rosversion="kinetic" 
+#ubuntu 16
+
+
+# ubuntu 18.04
+rosversion="melodic" 
 # Install the ros
 
 if [ `id -u` == 0 ]; then
@@ -21,7 +26,7 @@ sudo rosdep init
 rosdep update
 
 echo "Setup the ROS environment variables"
-echo -e "if [ -f /opt/ros/kinetic/setup.bash ]; then\n\tsource /opt/ros/kinetic/setup.bash\nfi" >> ~/.bashrc
+echo -e "if [ -f /opt/ros/$rosversion/setup.bash ]; then\n\tsource /opt/ros/$rosversion/setup.bash\nfi" >> ~/.bashrc
 echo "source ~/racecar/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
@@ -54,10 +59,10 @@ echo "Start to config for the project"
 echo "Install the ROS package for art_racecar"
 sudo apt-get install ros-$rosversion-joy -y
 sudo apt-get install ros-$rosversion-move-base -y
-sudo apt-get install ros-$rosversion-mrpt* -y
+sudo apt-get install ros-$rosversion-mrpt* -y # missing
 sudo apt-get install ros-$rosversion-geographic-msgs -y
 sudo apt-get install ros-$rosversion-map-server -y
-sudo apt-get install ros-$rosversion-gmapping -y
+sudo apt-get install ros-$rosversion-gmapping -y # missing
 sudo apt-get install ros-$rosversion-amcl -y
 sudo apt-get install ros-$rosversion-rviz-imu-plugin -y
 sudo apt-get install ros-$rosversion-dwa-local-planner -y
