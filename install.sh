@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Varibles
-# rosversion="kinetic" 
+rosversion="kinetic" 
 #ubuntu 16
 
 
 # ubuntu 18.04
-rosversion="melodic" 
+# rosversion="melodic"  # so many bugs
 # Install the ros
 
 if [ `id -u` == 0 ]; then
@@ -59,12 +59,22 @@ echo "Start to config for the project"
 echo "Install the ROS package for art_racecar"
 sudo apt-get install ros-$rosversion-joy -y
 sudo apt-get install ros-$rosversion-move-base -y
-sudo apt-get install ros-$rosversion-mrpt* -y # missing
+sudo apt-get install ros-$rosversion-mrpt* -y
 sudo apt-get install ros-$rosversion-geographic-msgs -y
 sudo apt-get install ros-$rosversion-map-server -y
-sudo apt-get install ros-$rosversion-gmapping -y # missing
+sudo apt-get install ros-$rosversion-gmapping -y # missing in melodic
 sudo apt-get install ros-$rosversion-amcl -y
 sudo apt-get install ros-$rosversion-rviz-imu-plugin -y
 sudo apt-get install ros-$rosversion-dwa-local-planner -y
 
-echo "--Finish"
+echo "Compile the art_racecar"
+catkin_make -j8
+
+echo "configuring "
+cd src/art_racecar/udev
+sudo bash art_init.sh
+
+echo "--Installing Finished, please reboot the computer."
+
+
+
