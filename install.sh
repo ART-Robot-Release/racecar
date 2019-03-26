@@ -70,7 +70,7 @@ sudo apt-get install ros-$rosversion-dwa-local-planner -y
 echo "Compile the art_racecar"
 catkin_make -j8
 
-echo "configuring "
+echo "configuring the serial udev of the car."
 cd src/art_racecar/udev
 sudo bash art_init.sh
 
