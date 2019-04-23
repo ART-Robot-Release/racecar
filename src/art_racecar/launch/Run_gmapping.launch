@@ -6,7 +6,7 @@
 
     <!-- ODOMETRY -->
     <!--rf2o_Laser_Odometry-->
-    <include file="$(find art_racecar)/launch/includes/rf2o.launch.xml" />
+    <!-- <include file="$(find art_racecar)/launch/includes/rf2o.launch.xml" /> -->
 
      <!-- Robot_Localization -->
     <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
