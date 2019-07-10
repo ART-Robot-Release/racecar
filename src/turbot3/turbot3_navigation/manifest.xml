@@ -1,0 +1,17 @@
+<package>
+  <description brief="turbot3_navigation">
+
+     turbot3_navigation
+
+  </description>
+  <author>ubuntu</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/turbot3_navigation</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+

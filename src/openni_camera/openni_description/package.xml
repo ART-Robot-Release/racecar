@@ -1,0 +1,18 @@
+<package>
+  <name>openni_description</name>
+  <version>1.11.1</version>
+    <description>Model files of OpenNI device.</description>
+  <author email="isaac.saito@plusonerobotics.com">Isaac I.Y. Saito</author>
+  <maintainer email="130s@2000.jukuin.keio.ac.jp">Isaac I.Y. Saito</maintainer>
+  <license>BSD</license>
+
+  <url type="website">http://www.ros.org/wiki/openni_description</url>
+  <url type="repository">https://github.com/ros-drivers/openni_camera</url>
+  <url type="bugtracker">https://github.com/ros-drivers/openni_camera/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+  <test_depend>liburdfdom-tools</test_depend>
+  <test_depend>rostest</test_depend>
+</package>

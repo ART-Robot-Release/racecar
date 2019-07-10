@@ -1,0 +1,31 @@
+<package>
+
+  <name>freenect_launch</name>
+  <version>0.4.2</version>
+  <description>
+    Launch files for freenect_camera to produce rectified, registered
+    or disparity images.  Also produce point clouds and registered
+    point clouds.  Based on the openni_launch package.
+  </description>
+
+  <maintainer email="jack.oquin@gmail.com">Jack O'Quin</maintainer>
+  <maintainer email="piyushk@gmail.com">Piyush Khandelwal</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/freenect_launch</url>
+  <url type="repository">https://github.com/ros-drivers/freenect_stack.git</url>
+  <url type="bugtracker">https://github.com/ros-drivers/freenect_stack/issues</url>
+
+  <author>Patrick Mihelich (original openni_launch package)</author>
+  <author email="piyushk@gmail.com">Piyush Khandelwal (libfreenect port)</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>freenect_camera</run_depend>
+  <run_depend>image_proc</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>rgbd_launch</run_depend>
+  <run_depend>tf</run_depend>
+
+</package>

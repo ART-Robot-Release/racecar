@@ -1,0 +1,17 @@
+<package>
+  <description brief="turbot3_description">
+
+     turbot3_description
+
+  </description>
+  <author>turtlebot3</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/turbot3_description</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+

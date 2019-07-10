@@ -1,0 +1,16 @@
+
+<launch>
+
+<!--
+  <node pkg="tf" type="static_transform_publisher" name="link2_broadcaster" args="0 0 0 0 0 0 odom base_link 100" /> 
+-->
+ <node pkg="tf" type="static_transform_publisher" name="laser_link_broadcaster" args="0 0 0 0 0 0 base_footprint laser_link 100" /> 
+  <node pkg="slam_karto" type="slam_karto" name="slam_karto" output="screen">
+    <remap from="scan" to="scan"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="map_update_interval" value="5"/>
+    <param name="resolution" value="0.05"/>
+    <rosparam command="load" file="$(find ls01g)/slam_launch/karto_mapper_params.yaml" />
+  </node>
+
+</launch>

@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="turtlebot3_example" type="turtlebot3_server.py" name="turtlebot3_server_py"  output="screen" />
+</launch>

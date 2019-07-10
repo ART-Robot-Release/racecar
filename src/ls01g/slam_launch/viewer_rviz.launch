@@ -1,0 +1,4 @@
+<launch>
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find ls01g)/rviz/kobuki_rviz_viewer.rviz" />
+
+</launch>

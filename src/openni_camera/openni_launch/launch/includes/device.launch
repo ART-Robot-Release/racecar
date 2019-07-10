@@ -1,0 +1,30 @@
+<launch>
+
+  <!-- have all the old parameters to prevent roslaunch errors -->
+  <arg name="manager" default="" />
+  <arg name="device_id" default="" />
+  <arg name="rgb_frame_id" default="" />
+  <arg name="depth_frame_id" default="" />
+  <arg name="rgb_camera_info_url" default="" />
+  <arg name="depth_camera_info_url" default="" />
+  <arg name="depth_registration" default="" />
+  <arg name="respawn" default="" />
+  <arg name="rgb" default="" />
+  <arg name="ir" default="" />
+  <arg name="depth" default="" />
+  <arg name="depth_registered" default="" />
+  <arg name="projector" default="" />
+
+  <!-- deprecation notice -->
+  <node name="depth_deprecated"
+        pkg="rgbd_launch"
+        type="hydro-upgrade-notice"
+        required="true">
+    <param name="name" value="device.launch" />
+    <param name="from_pkg" value="openni_launch" />
+    <param name="to_pkg" value="openni_launch" />
+    <param name="from_pkg_path" value="launch/includes/device.launch" />
+    <param name="to_pkg_path" value="launch/includes/device.launch.xml" />
+  </node>
+
+</launch>

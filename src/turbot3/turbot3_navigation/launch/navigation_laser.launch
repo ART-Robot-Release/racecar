@@ -1,0 +1,33 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi, turbot3]"/>
+  <arg name="laser_sensor" default="$(env TURTLEBOT3_LASER_SENSOR)"/>  <!-- HLDS, RPLIDAR -->
+
+  <!-- Turtlebot3 -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" />
+
+  <!-- Map server -->
+  <arg name="map_file" default="/home/turtlebot3/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
+  </node>
+
+
+ <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find turbot3_navigation)/launch/amcl/amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.627"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.119"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.12"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turbot3_navigation)/param/dummy.yaml"/>
+  <include file="$(find turbot3_navigation)/launch/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>
+
+

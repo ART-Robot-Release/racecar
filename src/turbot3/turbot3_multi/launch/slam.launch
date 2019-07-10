@@ -1,0 +1,14 @@
+<launch>
+
+<arg name="robot_name" default=""/>
+<arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
+
+<group ns="$(arg robot_name)">
+  <include file="$(find turbot3_multi)/launch/slam/multi_slam_$(arg slam_methods).launch">
+    <arg name="set_base_frame" value="/$(arg robot_name)/base_footprint"/>
+    <arg name="set_odom_frame" value="/$(arg robot_name)/odom"/>
+    <arg name="set_map_frame"  value="/$(arg robot_name)/map"/>
+  </include>
+</group>
+
+</launch>

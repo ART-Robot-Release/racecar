@@ -1,0 +1,10 @@
+<!-- OpenNI driver nodelet publisher -->
+<library path="lib/libopenni_nodelet">
+
+  <class name="openni_camera/driver" type="openni_camera::DriverNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      OpenNI camera driver nodelet.
+    </description>
+  </class>
+
+</library>

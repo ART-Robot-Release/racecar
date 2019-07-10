@@ -1,0 +1,18 @@
+# Move base node parameters. For full documentation of the parameters in this file, please see
+#
+#  http://www.ros.org/wiki/move_base
+#
+shutdown_costmaps: false
+
+controller_frequency: 20.0
+controller_patience: 1.0
+
+planner_frequency: 15.0
+planner_patience: 3.0
+
+oscillation_timeout: 2.0
+oscillation_distance: 0.2
+
+clear_costmaps: true
+
+clearing_rotation_allowed: false

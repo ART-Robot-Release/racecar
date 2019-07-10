@@ -1,0 +1,32 @@
+<launch>
+    <node name="ls01g" pkg="ls01g" type="ls01g" output="screen" ns="l0" launch-prefix="gnome-terminal -e" >
+　　		<param name="scan_topic" value="scan"/>         #设置激光数据topic名称
+　　		<param name="laser_link" value="laser_link"/>     #激光坐标
+　　		<param name="serial_port" value="/dev/ttyUSB0"/>  #雷达连接的串口
+        <param name="zero_as_max" value="false"/>
+        <param name="min_as_zero" value="true"/>
+		<param name="angle_disable_min" value="-1"/>
+		<param name="angle_disable_max" value="-1"/>
+    </node>
+	
+<node name="ls01g" pkg="ls01g" type="ls01g" output="screen" ns="l1" launch-prefix="gnome-terminal -e" >
+　　		<param name="scan_topic" value="scan"/>         #设置激光数据topic名称
+　　		<param name="laser_link" value="laser_link"/>     #激光坐标
+　　		<param name="serial_port" value="/dev/ttyUSB1"/>  #雷达连接的串口
+        <param name="zero_as_max" value="false"/>
+        <param name="min_as_zero" value="true"/>
+		<param name="angle_disable_min" value="-1"/>
+		<param name="angle_disable_max" value="-1"/>
+    </node>
+
+<node name="ls01g" pkg="ls01g" type="ls01g" output="screen" ns="l2" launch-prefix="gnome-terminal -e" >
+　　		<param name="scan_topic" value="scan"/>         #设置激光数据topic名称
+　　		<param name="laser_link" value="laser_link"/>     #激光坐标
+　　		<param name="serial_port" value="/dev/ttyUSB2"/>  #雷达连接的串口
+        <param name="zero_as_max" value="false"/>
+        <param name="min_as_zero" value="true"/>
+		<param name="angle_disable_min" value="-1"/>
+		<param name="angle_disable_max" value="-1"/>
+    </node>
+
+</launch>

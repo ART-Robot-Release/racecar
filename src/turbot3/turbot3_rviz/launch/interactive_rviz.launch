@@ -1,0 +1,6 @@
+<launch>
+
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_example)/rviz/turtlebot3_interactive.rviz" output="screen" />
+
+</launch>

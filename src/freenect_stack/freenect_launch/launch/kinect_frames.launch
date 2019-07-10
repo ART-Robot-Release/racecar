@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- have all the old parameters to prevent roslaunch errors -->
+  <arg name="camera" default="" />
+  <arg name="tf_prefix" default="" />
+
+  <!-- deprecation notice -->
+  <node name="kinect_frames_deprecated"
+        pkg="rgbd_launch"
+        type="hydro-upgrade-notice"
+        required="true">
+    <param name="name" value="kinect_frames.launch" />
+    <param name="from_pkg" value="freenect_launch" />
+    <param name="to_pkg" value="rgbd_launch" />
+    <param name="from_pkg_path" value="launch/kinect_frames.launch" />
+    <param name="to_pkg_path" value="launch/kinect_frames.launch" />
+  </node>
+
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+  <include file="$(find freenect_launch)/launch/freenect2.launch">
+    <arg name="camera"                          value="kinect" />
+    <arg name="motor_processing"                value="true" />
+    <arg name="audio_processing"                value="false" />
+    <arg name="rgb_processing"                  value="false" />
+    <arg name="ir_processing"                   value="false" />
+    <arg name="depth_processing"                value="true" />
+    <arg name="depth_registered_processing"     value="false" />
+    <arg name="disparity_processing"            value="false" />
+    <arg name="disparity_registered_processing" value="false" />
+    <arg name="num_worker_threads"              value="4" />
+  </include>
+</launch>

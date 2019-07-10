@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: rf2o_laser_odometry
+Description: Description of rf2o_laser_odometry
+Version: 1.0.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -llaser_odometry
+Requires: nav_msgs roscpp sensor_msgs std_msgs tf

@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find rgbd_launch)/test/camera_for_test.launch" />
+
+  <test test-name="test_kinect_frames"
+        pkg="rgbd_launch" type="test_rgbd_launch.py" />
+</launch>

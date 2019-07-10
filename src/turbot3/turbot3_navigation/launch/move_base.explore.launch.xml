@@ -1,0 +1,43 @@
+<launch>
+  <arg name="odom_frame_id"   default="odom"/>
+  <arg name="base_frame_id"   default="base_footprint"/>
+  <arg name="global_frame_id" default="/map"/>
+  <arg name="odom_topic" default="odom" />
+  <arg name="laser_topic" default="scan" />
+  <arg name="cmd_topic" default="cmd_vel" />
+  <arg name="custom_param_file" default="$(find turbot3_navigation)/param/dummy.yaml"/>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find turbot3_navigation)/param_multi/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find turbot3_navigation)/param_multi/costmap_common_params.yaml" command="load" ns="local_costmap" />   
+    <rosparam file="$(find turbot3_navigation)/param_multi/local_costmap_params.yaml" command="load" />   
+    <rosparam file="$(find turbot3_navigation)/param_multi/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find turbot3_navigation)/param_multi/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find turbot3_navigation)/param_multi/move_base_params.yaml" command="load" />
+    <rosparam file="$(find turbot3_navigation)/param_multi/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find turbot3_navigation)/param_multi/navfn_global_planner_params.yaml" command="load" />
+
+    <!-- external params file that could be loaded into the move_base namespace -->
+    <rosparam file="$(arg custom_param_file)" command="load" />
+ 
+
+
+
+
+   
+    <!-- reset frame_id parameters using user input data -->
+    <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>
+    <param name="global_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+    <param name="local_costmap/global_frame" value="$(arg global_frame_id)"/>
+    <param name="local_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+    <param name="DWAPlannerROS/global_frame_id" value="$(arg odom_frame_id)"/>
+    <param name="global_costmap/obstacle_layer/scan/topic" value="$(arg laser_topic)"/>
+    <param name="local_costmap/obstacle_layer/scan/topic" value="$(arg laser_topic)"/>
+    <param name="global_costmap/static_layer/map_topic" value="$(arg global_frame_id)"/>
+    <param name="local_costmap/static_layer/enabled" value="false"/>
+    <remap from="cmd_vel" to="$(arg cmd_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <remap from="scan" to="$(arg laser_topic)"/>
+  </node>
+
+</launch>

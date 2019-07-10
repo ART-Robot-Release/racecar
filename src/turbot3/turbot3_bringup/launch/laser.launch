@@ -1,0 +1,8 @@
+<launch>
+
+  <arg name="laser" default="$(env TURTLEBOT3_LASER_SENSOR)" doc="laser type [hlds, rplidar]"/>
+
+  <include file="$(find turbot3_bringup)/launch/laser/$(arg laser)_laser.launch"/>
+</launch>
+
+

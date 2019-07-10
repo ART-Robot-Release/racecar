@@ -1,0 +1,26 @@
+<launch>
+<arg name="robot_name" default=""/>
+<arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+
+<group ns="$(arg robot_name)">
+<node pkg="explore_lite" type="explore" respawn="false" name="explore" output="screen">
+  <param name="robot_base_frame" value="/$(arg robot_name)/base_footprint"/>
+  <param name="costmap_topic" value="/$(arg robot_name)/map"/>
+  <param name="costmap_updates_topic" value="/$(arg robot_name)/map_updates"/>
+  <param name="visualize" value="true"/>
+  <param name="planner_frequency" value="0.10"/>
+  <param name="progress_timeout" value="30.0"/>
+  <param name="potential_scale" value="3.0"/>
+  <param name="orientation_scale" value="0.0"/>
+  <param name="gain_scale" value="1.0"/>
+  <param name="transform_tolerance" value="0.3"/>
+  <param name="min_frontier_size" value="0.55"/>
+</node>
+</group>
+
+<include file="$(find turbot3_navigation)/launch/navigation_multi_no_amcl.launch">
+<arg name="robot_name" value="$(arg robot_name)" />
+</include>
+
+
+</launch>

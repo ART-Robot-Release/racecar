@@ -1,0 +1,8 @@
+<launch>
+  #need to fixed https://wenda.ncnynl.com/question/73
+  <node pkg="slam_karto" type="slam_karto" name="slam_karto" output="screen">
+    <remap from="scan" to="scan" />
+    <rosparam command="load" file="$(find turbot3_slam)/config/karto_mapper_params.yaml" />
+  </node>
+
+</launch>

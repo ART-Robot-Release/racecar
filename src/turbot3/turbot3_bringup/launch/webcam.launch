@@ -1,0 +1,5 @@
+<launch>
+
+<include file="$(find usb_cam)/launch/usb_cam.launch"/>
+
+</launch>

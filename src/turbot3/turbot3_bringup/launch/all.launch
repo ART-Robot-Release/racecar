@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_core.launch"/>
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_lidar.launch"/>
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch"/>
+</launch>
+

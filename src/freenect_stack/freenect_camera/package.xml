@@ -1,0 +1,50 @@
+<package>
+  <name>freenect_camera</name>
+  <version>0.4.2</version>
+  <description>
+    A libfreenect-based ROS driver for the Microsoft Kinect.  This is
+    a port of the OpenNI driver that uses libfreenect instead, because
+    on some systems with some devices it works better.
+  </description>
+
+  <maintainer email="jack.oquin@gmail.com">Jack O'Quin</maintainer>
+  <maintainer email="piyushk@gmail.com">Piyush Khandelwal</maintainer>
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/freenect_camera</url>
+  <url type="repository">https://github.com/ros-drivers/freenect_stack.git</url>
+  <url type="bugtracker">https://github.com/ros-drivers/freenect_stack/issues</url>
+
+  <author>Patrick Mihelich</author>
+  <author>Suat Gedikli</author>
+  <author>Radu Bogdan Rusu (original openni_camera driver).</author>
+  <author>Piyush Khandelwal (libfreenect port).</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>camera_info_manager</build_depend>
+  <build_depend>diagnostic_updater</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>libfreenect</build_depend>
+  <build_depend>log4cxx</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>pluginlib</build_depend>
+
+  <run_depend>camera_info_manager</run_depend>
+  <run_depend>diagnostic_updater</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>libfreenect</run_depend>
+  <run_depend>log4cxx</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>pluginlib</run_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/freenect_nodelets.xml"/>
+  </export>
+</package>

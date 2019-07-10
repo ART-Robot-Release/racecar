@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+    <arg name="inverted" default="false" />
+    <node name="ls01g" pkg="ls01g" type="ls01g" output="screen">
+        <param name="scan_topic" value="scan"/>         #设置激光数据topic名称
+        <param name="laser_link" value="base_laser_link"/>     #激光坐标
+        <param name="serial_port" value="/dev/ttyUSB0"/>  #雷达连接的串口
+        <param name="zero_as_max" value="false"/>        # 设置为true探测不到区域会变成最大值
+        <param name="min_as_zero" value="false"/>        # true：探测不到区域为0，false：探测不到区域为inf
+        <param name="angle_disable_min" value="-1"/>    # 角度制，从angle_disable_min到angle_disable_max之前的值为0
+        <param name="angle_disable_max" value="-1"/>
+        <param name="inverted" value="$(arg inverted)"/>           # 如果0度方向在串口线的方向上设置为true 
+    </node>
+    <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find ls01g)/launch/rviz.rviz"/>-->
+</launch>

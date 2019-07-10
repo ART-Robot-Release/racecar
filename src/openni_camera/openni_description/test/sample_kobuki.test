@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="xacro" type="xacro" name="kobuki_urdf_generation" args="$(find openni_description)/test/model/kobuki_description/sample_kobuki.urdf.xacro -o sample_kobuki.urdf" />
+  <test pkg="openni_description" type="test_openni_desc.py" test-name="test_openni_descriptioner" />
+</launch>

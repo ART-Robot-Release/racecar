@@ -1,0 +1,34 @@
+<launch>
+  <arg name="robot_name" default="" />
+
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi, turbot3]"/>
+  <arg name="laser_sensor" default="$(env TURTLEBOT3_LASER_SENSOR)"/>  <!-- HLDS, RPLIDAR -->
+
+  <!-- Turtlebot3-->
+  <!--
+  <include file="$(find turbot3_multi)/launch/model.launch" >
+     <arg name="robot_name" value="$(arg robot_name)" />
+  </include>
+  -->
+
+<group ns="$(arg robot_name)">
+
+ <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turbot3_navigation)/param/dummy.yaml"/>
+  <include file="$(find turbot3_navigation)/launch/move_base.explore.launch.xml">
+    <arg name="global_frame_id" value="/$(arg robot_name)/map"/>
+    <arg name="odom_frame_id"   value="/$(arg robot_name)/odom"/>
+    <arg name="base_frame_id"   value="/$(arg robot_name)/base_footprint"/>
+    <arg name="odom_topic" value="/$(arg robot_name)/odom" />
+    <arg name="laser_topic" value="/$(arg robot_name)/scan" />
+    <arg name="cmd_topic" value="/$(arg robot_name)/cmd_vel" />
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+</group>
+
+
+
+</launch>
+
+

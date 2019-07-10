@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="turtlebot" xmlns:xacro="http://wiki.ros.org/xacro">
+  <!-- Taken from https://github.com/yujinrobot/kobuki/blob/554e541a98a40f0ba477773efbd1f183fb48f30d/kobuki_description/urdf/kobuki.urdf.xacro -->
+  <xacro:include filename="$(find openni_description)/test/model/kobuki_description/kobuki.urdf.xacro" />
+  <!-- Taken from https://github.com/turtlebot/turtlebot/tree/indigo/turtlebot_description/urdf -->
+  <xacro:include filename="$(find openni_description)/test/model/turtlebot_description/urdf/turtlebot_common_library.urdf.xacro" />
+  <xacro:include filename="$(find openni_description)/test/model/turtlebot_description/urdf/hexagons.urdf.xacro" />
+  <xacro:include filename="$(find openni_description)/model/kinect.urdf.xacro" />
+  <xacro:include filename="$(find openni_description)/test/model/turtlebot_description/urdf/turtlebot_properties.urdf.xacro"/>
+
+  <sensor_kinect parent="base_link" cam_px="${cam_px}" cam_py="${cam_py}" cam_pz="${cam_pz}" cam_or="${cam_or}" cam_op="${cam_op}" cam_oy="${cam_oy}" />  
+  
+  <kobuki />
+  <stack_hexagons parent="base_link" />
+</robot>

@@ -1,0 +1,28 @@
+<launch>
+  <arg name="robot_name" default=""/>
+  <arg name="robot_x_pos" default="0.0"/>
+  <arg name="robot_y_pos" default="0.0"/>
+  <arg name="robot_z_pos" default="0.0"/>
+  <arg name="robot_yaw"   default="0.0"/>
+  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, hector, karto]"/>
+
+  <include file="$(find turbot3_multi)/launch/model.launch">   
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+  <include file="$(find turbot3_multi)/launch/init_pose.launch">   
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="robot_x_pos"   value="$(arg robot_x_pos)"/>
+    <arg name="robot_y_pos"   value="$(arg robot_y_pos)"/>
+    <arg name="robot_z_pos"   value="$(arg robot_z_pos)"/>
+    <arg name="robot_yaw" value="$(arg robot_yaw)"  />
+  </include>
+  
+<include file="$(find turbot3_multi)/launch/slam.launch">   
+    <arg name="robot_name" value="$(arg robot_name)"/>
+    <arg name="slam_methods" value="$(arg slam_methods)"/>
+    
+  </include>
+
+</launch>
+           

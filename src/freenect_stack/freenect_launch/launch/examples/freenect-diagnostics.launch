@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find freenect_launch)/launch/freenect.launch">
+    <arg name="enable_rgb_diagnostics" value="true" />
+    <!-- <arg name="enable_ir_diagnostics" value="true" /> -->
+    <arg name="enable_depth_diagnostics" value="true" />
+  </include>
+</launch>

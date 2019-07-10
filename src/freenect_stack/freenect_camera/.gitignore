@@ -1,0 +1,5 @@
+docs
+lib
+src/freenect_camera
+cfg/*.cfgc
+cfg/cpp
