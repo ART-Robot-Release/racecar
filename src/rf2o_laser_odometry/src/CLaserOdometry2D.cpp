@@ -21,7 +21,6 @@ using namespace mrpt::poses;
 using namespace std;
 using namespace Eigen;
 
-
 // --------------------------------------------
 // CLaserOdometry2D
 //---------------------------------------------
@@ -968,7 +967,6 @@ void CLaserOdometry2D::PoseUpdate()
         last_m_lin_speeds.erase(last_m_lin_speeds.begin());
     double sum = std::accumulate(last_m_lin_speeds.begin(), last_m_lin_speeds.end(), 0.0);
     lin_speed = sum / last_m_lin_speeds.size();
-
     last_m_ang_speeds.push_back(ang_speed);
     if (last_m_ang_speeds.size()>4)
         last_m_ang_speeds.erase(last_m_ang_speeds.begin());
@@ -995,8 +993,8 @@ void CLaserOdometry2D::PoseUpdate()
     odom.header.stamp = ros::Time::now();
     odom.header.frame_id = odom_frame_id;
     //set the position
-    odom.pose.pose.position.x = robot_pose.x();
-    odom.pose.pose.position.y = robot_pose.y();
+    odom.pose.pose.position.x = -robot_pose.x();
+    odom.pose.pose.position.y = -robot_pose.y();
     odom.pose.pose.position.z = 0.0;
     odom.pose.pose.orientation = tf::createQuaternionMsgFromYaw(robot_pose.yaw());
     //set the velocity
@@ -1032,7 +1030,6 @@ void CLaserOdometry2D::PoseUpdate()
                             0.0,  0.0,  0.0,  0.0025,  0.0,  0.0,
                             0.0,  0.0,  0.0,  0.0,  0.0025,  0.0,
                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0025};
-
     //set the twist covariance DAVID
     odom.twist.covariance = {0.25,  0.0,  0.0,  0.0,  0.0,  0.0,	
                             0.0,  0.25,  0.0,  0.0,  0.0,  0.0,

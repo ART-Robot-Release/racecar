@@ -1,5 +1,5 @@
 global_costmap:
-    footprint: [[-0.305, -0.18], [-0.305, 0.18], [0.305, 0.18], [0.305, -0.18]]
+    footprint: [[-0.305, -0.25], [-0.305, 0.25], [0.305, 0.25], [0.305, -0.25]]
     footprint_padding: 0.01
     transform_tolerance: 0.5
     update_frequency: 10.0
@@ -14,7 +14,7 @@ global_costmap:
     height: 10.0
     track_unknown_space: false
 
-    plugins: 
+    plugins:
         - {name: static,    type: "costmap_2d::StaticLayer"}            
         - {name: sensor,    type: "costmap_2d::ObstacleLayer"}
         - {name: inflation, type: "costmap_2d::InflationLayer"}
@@ -28,6 +28,6 @@ global_costmap:
         laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
     inflation:
-        inflation_radius: 0.1
-        cost_scaling_factor: 8.0
+        inflation_radius: 1.0
+        cost_scaling_factor: 3.0
 

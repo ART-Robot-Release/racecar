@@ -2,8 +2,8 @@ local_costmap:
     footprint: [[-0.305, -0.18], [-0.305, 0.18], [0.305, 0.18], [0.305, -0.18]]
     footprint_padding: 0.01
     transform_tolerance: 0.5
-    update_frequency: 10.0
-    publish_frequency: 10.0
+    update_frequency: 20.0
+    publish_frequency: 20.0
 
     global_frame: /odom
     robot_base_frame: /base_footprint
@@ -27,5 +27,5 @@ local_costmap:
         laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
     inflation:
-        inflation_radius: 0.1
-        cost_scaling_factor: 8.0
+        inflation_radius: 0.35
+        cost_scaling_factor: 3.0
