@@ -49,7 +49,7 @@ rosdep update
 
 echo "Setup the ROS environment variables"
 echo -e "if [ -f /opt/ros/$rosversion/setup.bash ]; then\n\tsource /opt/ros/$rosversion/setup.bash\nfi" >> ~/.bashrc
-echo "source $install_path/racecar/devel/setup.bash" >> ~/.bashrc
+echo "source $install_path/acecar/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 echo "Install the rosinstall"

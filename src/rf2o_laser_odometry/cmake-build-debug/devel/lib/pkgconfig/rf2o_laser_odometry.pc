@@ -1,0 +1,8 @@
+prefix=/home/zn/racecar/src/rf2o_laser_odometry/cmake-build-debug/devel
+
+Name: rf2o_laser_odometry
+Description: Description of rf2o_laser_odometry
+Version: 1.0.0
+Cflags: -I/home/zn/racecar/src/rf2o_laser_odometry/include
+Libs: -L/home/zn/racecar/src/rf2o_laser_odometry/cmake-build-debug/devel/lib -llaser_odometry
+Requires: nav_msgs roscpp sensor_msgs std_msgs tf

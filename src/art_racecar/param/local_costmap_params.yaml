@@ -1,11 +1,9 @@
-
-
 local_costmap:
     footprint: [[-0.305, -0.18], [-0.305, 0.18], [0.305, 0.18], [0.305, -0.18]]
     footprint_padding: 0.01
     transform_tolerance: 0.5
-    update_frequency: 24.0
-    publish_frequency: 24.0
+    update_frequency: 10.0
+    publish_frequency: 10.0
 
     global_frame: /odom
     robot_base_frame: /base_footprint
@@ -13,11 +11,11 @@ local_costmap:
     static_map: true
 
     rolling_window: true
-    width: 15.0
-    height: 15.0
+    width: 10.0
+    height: 10.0
     resolution: 0.05
 
-    #inflateon_radius: 0.3
+    inflateon_radius: 0.1
     track_unknown_space: false
 
     plugins:            
@@ -30,4 +28,4 @@ local_costmap:
 
     inflation:
         inflation_radius: 0.1
-        cost_scaling_factor: 10.0
+        cost_scaling_factor: 8.0
