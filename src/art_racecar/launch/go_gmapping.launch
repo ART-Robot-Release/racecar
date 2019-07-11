@@ -7,12 +7,10 @@
     <include file="$(find art_racecar)/launch/includes/art_car_tf.launch.xml" />
 
     <!-- car model -->
-    <!-- <include file="$(find racecar_simulator)/launch/car.. model" /> -->
+    <include file="$(find racecar_simulator)/launch/simulate.launch" />
 
     <!-- SENSOR DEVICE -->
-    
-    <!-- <include file="$(find art_racecar)/launch/ls01g_lidar.launch"/> -->
-    
+    <include file="$(find art_racecar)/launch/ls01g_lidar.launch"/>
 
     <!-- IMU -->
     <include file="$(find art_imu)/launch/imu.launch" />
@@ -37,9 +35,6 @@
             output_frame_id: kinect_link
         </rosparam>
     </node>
-
-
-
 
     <include file="$(find art_racecar)/launch/Run_gmapping.launch"/>
     
