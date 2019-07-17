@@ -51,6 +51,10 @@ def callback(data):
         twist.linear.x = data.axes[3] * speed_add_once
         twist.angular.z = data.axes[2] * turn_add_once
         control_speed = (data.axes[3] * (speed_max - speed_min) * speed_add_once / 2 + speed_mid)  
+        if(control_speed > 1500):
+            control_speed = control_speed + 30
+        elif(control_speed < 1500):
+	    control_speed = control_speed - 200	
         control_turn = (data.axes[2] * (turn_max - turn_min) * turn_add_once  / 2 + turn_mid) 
         #print('speed: %.2f, turn: %.2f'%(twist.linear.x,twist.angular.z))
         car_twist.linear.x = control_speed
@@ -80,11 +84,11 @@ def getKey():
 if __name__=="__main__":
 
     settings = termios.tcgetattr(sys.stdin)
-    speed_add_once = 0.5
+    speed_add_once = 0.25
     turn_add_once = 0.5
-    speed_max = 2500
-    speed_min = 500
-    speed_mid = (speed_max + speed_min)/2
+    speed_max = 1600
+    speed_min = 1400
+    speed_mid = 1500
     turn_max = 180
     turn_min = 0
     turn_mid = (turn_max + turn_min)/2

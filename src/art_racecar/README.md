@@ -1,5 +1,6 @@
 # art_racecar
-# art-racecar V1.0
+# art-racecar V1.0  2019.01.30 
+# art-racecar V1.1  2019.07.17 完善手柄遥控功能
 
 ROS racecar
 ************************安装************************
@@ -19,6 +20,8 @@ b) 3.3运行gmapping
 roslaunch art_racecar Run_gmapping.launch
 c) 3.4运行键盘控制
 rosrun art_racecar racecar_teleop.py
+或者手柄遥控
+roslaunch art_racecar teleop_joy.launch
 d) 3.5.本地电脑打开rviz
 本地电脑打开：
 source  工作空间
@@ -30,6 +33,9 @@ U	 I 	O
 J 	K	 L
 M	 , 	.
 加减速为W，S.
+手柄控制：
+L侧方向键:上下为加速减速，左右为转向幅度大小调节
+R侧摇杆：控制小车运动
 f) 保存地图（地图直接保存在小车上）
 在art_racecar文件夹下执行：bash save_map.sh 
 地图保存在art_racecar/map/mymap.pgm
@@ -67,5 +73,5 @@ e) 4.5 开始导航
 
 											
 											# Steven Zhang
-											# 2019.01.30
+											# 2019.07.17
 	
