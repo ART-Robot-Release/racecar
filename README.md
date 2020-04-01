@@ -7,7 +7,7 @@ ROS racecar
 cd  ~/  
 git clone https://github.com/ART-Robot-Release/racecar  
 cd racecar  
-./install.sh  
+
 配置小车串口udev：  
 cd  ~/racecar/src/art_racecar/udev  
 sudo  bash art_init.sh  
